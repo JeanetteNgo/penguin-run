@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+      <meta charset="utf-8"/>
+      <title> FP | Journal Entries </title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+      <script defer type="text/javascript" src="appscripts/main.js"> </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" type="image/svg" href="resources/myFavicon.svg"/>
+
+    </head>
+
+<body>
+  <div class="container">
+        <header class="header">
+            <h1> Final Project | Journal Entries </h1>
+        </header>
+
+        <nav id="nav-bar">
+            <h2> NAV </h2>
+            <ul id="left-sidebar-list">
+                <!-- <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="https://nm2207.org/2021II/A0190184E/web/"> Homepage </a> 
+                </li> -->
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="../index.html"> Final Project </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="../writeUp/journal.html"> Write Up </a> 
+                </li>
+                <hr> 
+                <li class="left-sidebar-items">
+                <a class="nav-links" href="#entry-01"> Entry 01 </a>
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#entry-02"> Entry 02 </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#entry-03"> Entry 03 </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#entry-04"> Entry 04 </a> 
+                </li>
+            </ul>  
+        </nav>
+
+        <article class="content">
+        
+        <div class="journal-entries"  id="entry-01">
+
+            <h2 class="entry-header"> Journal Entry 01 </h2> 
+
+                <p> For my final project, I am thinking of doing an interactive game in the form of a simple maze,
+                    using mouse clicks to direct player movement. Since a maze game alone might not be enough to
+                    showcase the variety of things we have learned in class, I also thought about incorporating 
+                    mini games which the player will encounter while making their way out of the maze. 
+                </p> 
+                <p> I originally thought about simply doing a whack-a-mole game which the prof mentioned, since it 
+                    is of a manageable difficulty to build with the fundamental skills we have picked up thus far 
+                    (timers, mouseclicks, loops, etc.). However, it felt a little lacking to me somehow to center
+                    my whole final project on a whack-a-mole game, so I opted to simply make it a part of the project, 
+                    as one of the mini games to include within the maze.
+                </p>
+                <p> I haven't given too much thought about what my other mini games will be, but ideally, they should
+                    showcase the different things we have learned thus far. I roughly thought about making a game
+                    of chess (with my own rules) as well, but I am not too sure how time-consuming that would be.
+                </p>
+                <p> While I haven't really started working on the final project (as evident from this super 
+                    barebones final project page...) I am pretty excited to see how far I can take this! I would
+                    like the game to at least look somewhat visually appealing as well, so I think the visual 
+                    design aspects would be quite a huge time sink. Ultimately, I think I will be able to learn 
+                    a lot in the process, and I am really looking forward to embarking on this project! :)
+                </p>
+        </div>
+
+        <hr>
+            
+        <div class="journal-entries" id="entry-02">
+            
+            <h2 class="entry-header"> Journal Entry 02 </h2>
+
+                <p> Currently, I am in the midst of finalizing my game layout. Visually, I am thinking of creating a virtual 
+                    DS with a main screen and a secondary screen. How this works is that the player would predominantly be 
+                    interacting with the main screen to get through the maze, and everytime a minigame pitstop is encountered, 
+                    the minigame will 'activate' and be playable on the secondary screen.
+                    <br> <br>
+                    <img src="images/game-layout.png">
+                </p> 
+                <p> However, I foresee that my technical abilities may still be too lacking to implement something like this, 
+                    so for now, I will simply focus on building the maze game. If I am unable to flesh out the virtual DS 
+                    aspect due to time constraints, at the very least, an MVP version would be simply the maze game itself 
+                    with a timer and other specified must-have components in the assignment guidelines.
+                </p>
+                <p> Graphics wise, I am thinking of creating my own character and background art using software such as 
+                    Photoshop (for raster images) or Illustrator (for svg images), since there is no mention of having to 
+                    strictly stick to using Raphael in the instructions given. While there has been an emphasis on using 
+                    svg graphics, I personally like the pixel game art look which leans more towards raster graphics and might
+                    just go with this more heavily in terms of character design... hopefully that's okay!
+                </p>
+        </div>
+
+        <hr>
+            
+        <div class="journal-entries" id="entry-03">
+            
+            <h2 class="entry-header"> Journal Entry 03 </h2>
+
+                <p> For the main layout of my maze, I found this awesome 
+                    <a href="https://stackoverflow.com/questions/42032208/how-to-display-arrays-as-visuals-in-javascript-e-g-for-a-maze" target="_blank"> reference code </a>
+                    using arrays to set things up. I decided to use arrow keys to control player movement instead and since we didn't learn much about keypress events in class, 
+                    I spent some time camping on StackOverflow and various sites to figure out how to get my character moving using event.key, based on this
+                    <a href="https://stackoverflow.com/questions/4416505/how-to-take-keyboard-input-in-javascript/40648033#40648033" target="_blank"> reference code </a>.        
+                </p> 
+                <p> Going forward, I would need to implement a timer to track the amount of time the player took to complete the maze.
+                    I would also like to start working on creating custom graphics to make the game look more visually appealing.
+                    Some other extras to include would be background music and maybe a sound effect that would play when the player has
+                    reached the ending point.
+                </p>
+                <h4> Some Working Code: </h4>
+                    <img src="images/code-entry-03.JPG" id="img-entry-03">
+
+        </div>
+
+        <hr>
+            
+        <div class="journal-entries" id="entry-04">
+            
+            <h2 class="entry-header"> Journal Entry 04 </h2>
+
+                <p> For this week's update, I mainly created some custom graphics to use as character and background sprites,
+                    using Paper.image to embed them.
+                    I also decided to scrape the mini game aspect due to time constraints, and subsequently removed the 
+                    virtual DS layout even though I really liked the idea :( As such, I had to adjust the game 
+                    dimensions accordingly.      
+                </p> 
+                <div class="img-row">
+                    <div class="img-column">
+                      <img src="images/virtual-DS-layout-cropped.JPG">
+                      <figcaption> Old layout </figcaption>
+                    </div>
+                    <div class="img-column">
+                      <img src="images/new-maze-layout-cropped.JPG">
+                      <figcaption> New layout </figcaption>
+                    </div>
+                  </div>
+
+                <p> Other updates include:
+                    <ul>
+                        <li>
+                            adding a Start/Reset button so that I can properly track the duration taken to 
+                            complete the maze from start to end
+                        </li>
+                        <li>
+                            resetting player position to the starting point once player 
+                            has completed the game.
+                        </li>
+                    </ul> 
+                </p>
+
+                <p> For now, most of the basic requirements have been checked off, and the only major requirement left is 
+                    to implement a loop somewhere in the game. 
+                    
+                    I'm thinking of adding moving balls as obstacles that the player has to
+                    dodge while trying to get to the end point. 
+
+                    The current timer you see is also simply a html text placeholder so once I find some time I'll be 
+                    ripping and modifying my old timer code from past challenges :'D
+                </p>
+
+        </div>
+
+        </article>
+
+  </div>
+
+</body>
+
+</html>

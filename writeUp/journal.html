@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+      <meta charset="utf-8"/>
+      <title> FP | Journal Entries </title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+      <script defer type="text/javascript" src="appscripts/main.js"> </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" type="image/svg" href="resources/myFavicon.svg"/>
+
+    </head>
+
+<body>
+  <div class="container">
+        <header class="header">
+            <h1> Final Project | Write Up </h1>
+        </header>
+
+        <nav id="nav-bar">
+            <h2> NAV </h2>
+            <ul id="left-sidebar-list">
+                <!-- <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="https://nm2207.org/2021II/A0190184E/web/"> Homepage </a> 
+                </li> -->
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="../index.html"> Final Project </a> 
+                </li>
+                <hr>
+                <li class="left-sidebar-items">
+                <a class="nav-links" href="#introduction"> Intoduction </a>
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#layout"> Layout | Styling </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#set-up"> Game Set-up </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#bugs"> Bugs Fixed </a> 
+                </li>
+                <li class="left-sidebar-items"> 
+                    <a class="nav-links" href="#conclusion"> Conclusion </a> 
+                </li>
+            </ul>  
+        </nav>
+
+        <article class="content">
+        
+        <div class="journal-entries"  id="introduction">
+
+            <h2 class="entry-header"> Introduction </h2> 
+            <p>
+                For my final project, I decided to design a simple maze game. 
+                The objective of the game is to help the penguin catch the fish, by navigating through the maze using 
+                arrow keys while dodging flying snowballs.
+                Upon clicking the "start" button, a timer will run, displaying the time elapsed in minutes and seconds.
+                The player is free to reset the game state at any point (once the "start" button has been clicked, 
+                its inner.HTML will change to "reset" instead).
+                The game ends when the win condition is met (penguin successfully reaches the fish), 
+                or when the lose condition is triggered (penguin collides with snowball).
+            </p>
+        </div>
+            
+        <div class="journal-entries" id="layout">
+            
+            <h2 class="entry-header"> Layout and Styling </h2>
+
+                <h3> Grid Layout </h3>
+                <p> I modified the grid layout that we used in class to suit what I wanted by removing the aside column 
+                    and footer, and adjusting the grid-column span for the main game container to fill up the remaining space. 
+                    The original grid layout also had some redundant vertical and horizontal scrolling (overflow), which 
+                    actually affected gameplay - when the player continues pressing down on arrow keys upon hitting a wall, 
+                    the web page will scroll up or down, which I found mildly annoying.
+                    I fixed this by using "overflow-y: auto" for the html body in css. 
+                    An interesting takeaway: I tried "overflow-y: hidden" initially but realized that for smaller viewports, 
+                    the game container would be cut off without any option to scroll &#128534;
+
+                </p> 
+
+                <h3> Styling </h3>
+                <p> Aesthetics wise, I wanted my game to have a winter theme since the main character is a penguin, 
+                    so I sourced for suitable images online to use as the background, and styled them using css. 
+                    I also imported fonts from Google Fonts to style my game header and text.
+                    <br> <br>
+                    For the game, a Raphael rectangle is first drawn using paper.rect to define the game container dimensions. 
+                    While the snowballs are made using paper.circle, the background, walls, and characters are 
+                    custom-made raster sprites, which I embedded in the form of paper.image.
+                </p> 
+                
+        </div>
+            
+        <div class="journal-entries" id="set-up">
+            
+            <h2 class="entry-header"> Game Set-up </h2>
+
+                <p> Apart from the grid layout and SVG graphics, multiple other concepts taught in or learned outside class
+                    were also used. 
+
+                </p>
+
+                <h3> Arrays </h3>
+                <p> The main layout of the maze is visually represented and set up using an array, inspired by 
+                    <a href="https://stackoverflow.com/questions/42032208/how-to-display-arrays-as-visuals-in-javascript-e-g-for-a-maze" target="_blank"> this</a>.    
+                    The flying snowballs are also contained in an array, with a for loop used to initialize their 
+                    properties, such as their x and y positions.
+
+                </p>
+
+                <h3> Timer </h3>
+                <p> Before the game begins, the timer minutes and seconds are initialized to 0. Rather than using Date.now
+                    which we learned in class, I created an updateTimer function which increments by the second, 
+                    and then by the minute once every 60 seconds have passed. 
+                    This function is then called repeatedly every second via a setInterval once the game starts. 
+                    Upon winning or losing the game, the timer is reset. 
+
+                </p>
+
+                <h3> Conditionals </h3>
+                <p> Multiple if conditionals are used throughout the game. I learned about the Javascript 
+                    conditional (ternary) operator, which can be succintly expressed in one line. 
+                    I also learned about other operators such as || logical OR and && logical AND.
+
+
+                </p>
+
+                <h3> Movement </h3>
+                <p> While we did not cover much on keyboard controls, I was able to find several
+                    <a href="https://stackoverflow.com/questions/4416505/how-to-take-keyboard-input-in-javascript/40648033#40648033" target="_blank"> references </a>
+                    online to guide me in using event.key for player movement. 
+                    The code was then modified for the needs of the game, with conditions included to check for player 
+                    collision with the walls or maze border.
+                    To move the snowballs, I created a moveSnowball function that gets called periodically at set intervals.
+
+
+                </p>
+        </div>
+
+            
+        <div class="journal-entries" id="bugs">
+            
+            <h2 class="entry-header"> Bugs Squashed </h2>
+
+                <p> <b>Collision:</b> <br>  
+                    Initially, the player sprite was able to "enter" and move along the edge of the wall, 
+                    because collision was only checked on the sides of the wall and the edge that the player is facing.
+                    For instance, if the player is moving right, collision is checked only for the top left edge
+                    of the next wall, and not the top right edge of the previous wall. Hence, the player can pass
+                    through the edges of certain corners.
+                </p> 
+                    <div>
+                        <img src="images/old-collision-check.png" width="700px">
+                        <figcaption> Old collision check </figcaption>
+                    </div>
+                <br>    
+                <p> With the updated code, collision can be detected when the player comes into contact with 
+                    any edge, effectively preventing the player from moving past that point.
+                </p>
+                     
+
+                
+
+        </div>
+
+        <div class="journal-entries" id="conclusion">
+            
+            <h2 class="entry-header"> Concluding Thoughts </h2>
+
+                <p> If I had more time, I would have added in some audio to spice up the game. 
+                    I would also have refined the graphics of the ice cube walls,
+                    since currently, the corners of the walls are not visually accurate. 
+                    I would also have liked to add some radio buttons for various difficulty settings.
+                    For example, the current state can be the "easy" setting. 
+                    For the "normal" setting, I can look at adding more snowballs and making them bigger. 
+                    For the "hard" setting, I can increase the snowball speed, while decreasing the player speed. 
+                </p> 
+                
+
+        </div>
+
+        <hr><br>
+        <h5> NM2207 AY 20/21 Semester 2 </h5>
+        <p> 
+            <b> Done by: Ngo Li Ning Jeanette </b> 
+            <br>
+            <b> Word Count: </b> 885
+        </p>
+        </article>
+
+  </div>
+
+</body>
+
+</html>

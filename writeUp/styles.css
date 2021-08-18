@@ -1,0 +1,201 @@
+
+html, body {
+    height:100%;
+    width:100%;
+    margin: 0px;
+    background-color: aliceblue;
+    background-image: url("https://i.pinimg.com/originals/31/1d/b7/311db75b09c8f703cb4d787776c425b3.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+  }
+  
+.container {
+    font-family: 'Roboto', sans-serif;
+    height:95%;
+    width:98%;
+    margin: 10px;
+} 
+.container > * {
+    background-color: #ccc;
+    /* background-image: url("https://i.redd.it/yn9ryipxeac31.png"); */
+    background-size: cover;
+    padding: 1em;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+header {
+    background-image: url("https://images.unsplash.com/photo-1517504734587-2890819debab?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHVycGxlJTIwc25vd3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+}
+.content {
+    min-height: 40%;
+    overflow-y: scroll;
+    /* background-color: aliceblue; */
+    background-image: url("https://images.unsplash.com/photo-1517504734587-2890819debab?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHVycGxlJTIwc25vd3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+}
+.content::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
+}
+
+.content::-webkit-scrollbar-track {
+  background: lavender;        /* color of the tracking area */
+  border-radius: 50px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color:rebeccapurple;    /* color of the scroll thumb */
+  border-radius: 50px;       /* roundness of the scroll thumb */
+  border: 3px solid rebeccapurple;  /* creates padding around scroll thumb */
+}
+
+#nav-bar {
+    grid-row-end: span 2;
+    text-align: center;  
+    color:lavender;
+    background-image: url("https://i.pinimg.com/originals/31/1d/b7/311db75b09c8f703cb4d787776c425b3.gif");
+  }  
+ul#left-sidebar-list {
+    padding: 0px;
+}
+li.left-sidebar-items {
+    list-style: none;
+    display: inline-block;
+} 
+.nav-links {
+    color:lavender;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    text-transform: initial;
+}
+a.nav-links {
+  text-decoration: none;
+  text-align: left;
+}
+a:hover {
+  color: rgb(173, 236, 255);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+h1 {
+      font-size: 24px;
+}
+h2 {
+      font-size: 20px;
+      margin: 20px;
+}
+h3 {
+      font-size: 18px;
+      margin-top: 3px;
+      margin-bottom: 0px;
+      text-align: left;
+      text-transform: initial;
+      color: lavender;
+}
+
+p { 
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;  
+    font-weight: 500;
+    color: lavenderblush;
+    text-align: justify;
+    text-transform: initial;
+    margin-top: 5px;
+}
+
+li {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;  
+  font-weight: 500;
+  color: lavenderblush;
+  text-align: justify;
+  text-transform: initial;
+}
+
+
+
+figcaption {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;  
+  color: lavenderblush;
+  text-align: center;
+  text-transform: initial;
+}
+
+.journal-entries {
+    margin: 3% 12% 3% 12%;
+}
+
+img {
+    max-width: 90%;
+    display: block;
+    margin: auto;
+}
+#img-entry-03 {
+  width: 500px;
+  max-width: 90%;
+}
+
+.img-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+} 
+.img-column {
+  /* flex: 30%; */
+  padding: 5px;
+}
+.img-column img {
+  margin: 10px;
+  max-width: 350px;
+  max-height: 380px;
+}
+
+
+
+/* responsive grid layout */
+
+@media screen and (min-width: 40em) {
+    .container > * {
+      margin-bottom: 0;
+    }
+    /* Define the grid */
+    .container {
+      display: grid;
+      grid-template-columns: 18% 60% 18%;
+      grid-gap: 2% 2%;
+      grid-template-rows: 10% auto 10%;
+    }
+    /* Place items on the grid */
+    .header {
+      grid-column: 1 / span 3;
+      text-transform: uppercase;
+      color:rgb(210, 210, 250);
+      font-weight: 600;
+      font-size: 20px;
+      background-image: url("https://i.redd.it/yn9ryipxeac31.png");
+      
+      display:flex; 
+      justify-content:center;
+      align-items:center;
+    }
+
+    nav {
+        height: 80vh;
+    }
+
+    .content {
+      grid-column: 2 / span 2;
+      text-align: center;
+      text-transform: uppercase;
+      color:lavender;
+      font-weight: 600;
+      height: 80vh;
+    }
+  
+  }
