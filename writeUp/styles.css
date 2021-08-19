@@ -73,7 +73,7 @@ li.left-sidebar-items {
 }
 a.nav-links {
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 }
 a:hover {
   color: rgb(173, 236, 255);
